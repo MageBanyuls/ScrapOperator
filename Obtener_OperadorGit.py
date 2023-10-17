@@ -30,10 +30,10 @@ def consultar_numeros(parte_df):
         time.sleep(2)
 
         # Ingresar usuario y contraseña
-        user= "CJLAIACO"
+        user= "Aqui va el usuario"
         usuario_input=driver.find_element(By.ID, "loginForm:workspace_login_user_name")
         usuario_input.send_keys(str(user))
-        passw= "Luna2022+"
+        passw= "Aqui va la contraseña"
         pass_input=driver.find_element(By.ID, "loginForm:workspace_login_password")
         pass_input.send_keys(str(passw))
         inicio_sesion= driver.find_element(By.ID,"loginForm:submitbutton")
@@ -199,11 +199,11 @@ if 'Revisado' not in df.columns:
     df['Revisado'] = 'No'
 
 # Dividir el DataFrame en partes para distribuir entre los hilos
-num_threads = 10
+num_threads = 40
 particiones = np.array_split(df, num_threads)
 
 # Configurar el número máximo de hilos
-max_workers = 10
+max_workers = 40
 
 # Crear un ThreadPoolExecutor
 with ThreadPoolExecutor(max_workers=max_workers) as executor:
